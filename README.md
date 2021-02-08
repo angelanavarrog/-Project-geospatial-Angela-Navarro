@@ -36,4 +36,4 @@ Finally, all the relevant information has been reflected on maps. For this aim, 
 
 After selected an unique location in NYC, could we propose our location as the final ubication of the office? Would our selectd criteria be satisfied?
 
-![map1.png](attachment:map1.png)
+![office proposal location](https://github.com/angelanavarrog/Geospatial-Project-Angela-Navarro/blob/main/images/office%20location.jpg)
