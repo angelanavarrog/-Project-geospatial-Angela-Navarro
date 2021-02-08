@@ -352,7 +352,7 @@ Map(Layer(gdf_stadiums, popup_hover = [popup_element("name","Basketball Stadium"
 url4 = 'https://api.foursquare.com/v2/venues/explore'
 night_clubs = "4bf58dd8d48988d11f941735"
 
-# Definition of parameters incuided  in vegan query and stablishing a radius of 500m from the office.
+# Definition of parameters incuided  in night_clubs query and stablishing a radius of 1000m from the office.
 
 parametros_night_clubs = {"client_id" : tok1,
               "client_secret" : tok2,
@@ -370,7 +370,7 @@ decoding_data4 = data4.get("response")
 decoded4 = decoding_data4.get("groups")[0]
 night_clubs = decoded4.get("items")
 
-# We define a vegan restaurants map and its latitude and longitude.
+# We define a night clubs  map and its latitude and longitude.
 map_night_clubs = ["venue","name"]
 m_latitud_nightclubs = ["venue","location","lat"]
 m_longitud_nightclubs = ["venue","location","lng"]
@@ -424,7 +424,7 @@ Map(Layer(gdf_night_clubs, popup_hover = [popup_element("name","Night clubs")]))
 url5 = 'https://api.foursquare.com/v2/venues/explore'
 travel_transport = "4d4b7105d754a06379d81259"
 
-# Definition of parameters incuided  in vegan query and stablishing a radius of 500m from the office.
+# Definition of parameters incuided in travel query and stablishing a radius of 1000m from the office.
 parametros_travel = {"client_id" : tok1,
               "client_secret" : tok2,
               "v": "20180323",
