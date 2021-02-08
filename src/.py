@@ -16,7 +16,6 @@ import geopandas as gpd
 import cartoframes
 from cartoframes.viz import Map, Layer, popup_element
 
-
 # Import our database from MongoClient where an .json file was used.
 
 client = MongoClient()
