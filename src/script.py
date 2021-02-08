@@ -31,8 +31,6 @@ results1
 
 # Conversion of the obtained results in a pandas dataframe.
 pd.DataFrame.from_dict(results1)
-offices_df = pd.DataFrame.from_dict(results1)
-print (offices_df)
 
 # Clean of the results apply a new filter based on the location of the office. NYC as was defined.
 
@@ -54,6 +52,7 @@ print (final_location)
 
 office_lat = 40.7592189
 office_long = -73.9783534
+print (office_lat,office_long)
 
 office_data = [("office","40.7592189","-73.9783534","POINT (-73.9783534 40.7592189)","office location")]
 df_office = pd.DataFrame(office_data, columns = ["name","latitud","longitud","geometry","criteria"]) 
@@ -74,7 +73,7 @@ icono = Icon(color = "blue",
              tooltip = "Office location proposal")
 
 
-# Establishment of our selected location on a map_1.
+# Establishment of our selected location on map_1.
 
 office_location = [office_lat, office_long]
 marker_office = Marker(location = office_location, icon = icono)
@@ -98,12 +97,12 @@ def geocode(address):
 
 donde = "New York"
 data = requests.get(f"https://geocode.xyz/{donde}?json=1").json()
-
+print(data)
 
 # Definition of a geocode variable.
 nyc = geocode(city)
 nyc = {'type': 'Point', 'coordinates': [40.7592189, -73.9783534]}
-
+print (nyc)
 
 # Getting tokens
 tok1 = os.getenv("tok1")
@@ -132,10 +131,19 @@ decoding_data = data.get("response")
 decoded = decoding_data.get("groups")[0]
 starbucks = decoded.get("items")
 
+print (decoding_data)
+print (decoded)
+print (starbucks)
+
 # We define a Starbucks map and its latitude and longitude.
 map_starbucks = ["venue","name"]
 m_latitude = ["venue","location","lat"]
 m_longitude = ["venue","location","lng"]
+
+print(map_starbucks)
+print (m_latitude)
+print(m_longitude)
+
 
 # Definition of function that returns the items.
 
@@ -155,11 +163,14 @@ for dic in starbucks:
     lis1["latitud"] = getFromDict(dic,m_latitude)
     lis1["longitud"] = getFromDict(dic,m_longitude)
     starbucks_nyc.append(lis1)
+print (starbucks_nyc)
 
 # Conversion on a dataframe.
 
 df_starbucks = pd.DataFrame(starbucks_nyc)
 df_starbucks.head()
+
+print (df_starbucks)
 
 # Definition of a geodataframe to reflect the previous data frame on a cartoframe map.
 
@@ -171,6 +182,8 @@ gdf_starbucks.head()
 gdf_starbucks = gdf_starbucks.assign(name = [ "Starbucks"]*20,
                criteria = ["Starbucks"]*20)
 gdf_starbucks.head()
+
+print (gdf_starbucks)
 
 # Relects it on a map
 
