@@ -31,6 +31,8 @@ results1
 
 # Conversion of the obtained results in a pandas dataframe.
 pd.DataFrame.from_dict(results1)
+offices_df = pd.DataFrame.from_dict(results1)
+print (offices_df)
 
 # Clean of the results apply a new filter based on the location of the office. NYC as was defined.
 
@@ -42,9 +44,10 @@ results2
 #  Conversion of results2 in a list and in a dataframe.
 
 office_location = list(results2)
-office_location
+print(office_location)
 
-pd.DataFrame.from_dict(office_location)
+final_location = pd.DataFrame.from_dict(office_location)
+print (final_location)
 
 
 # Definition of the coordinates of our office proposal and it conversion in a dataframe
@@ -54,7 +57,7 @@ office_long = -73.9783534
 
 office_data = [("office","40.7592189","-73.9783534","POINT (-73.9783534 40.7592189)","office location")]
 df_office = pd.DataFrame(office_data, columns = ["name","latitud","longitud","geometry","criteria"]) 
-df_office
+print (df_office)
 
 # By using folium, we define a map based on the given coordinates.
 
