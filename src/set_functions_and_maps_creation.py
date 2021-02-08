@@ -20,7 +20,7 @@ from cartoframes.viz import Map, Layer, popup_element
 
 client = MongoClient()
 db = client.companies
-print(db)
+db
 
 # Execution of first query to run filters based on number of employees.
 
@@ -506,9 +506,6 @@ gdf_transports = gdf_transports.assign(name = [ "Theater Row - The Acorn",
 gdf_transports.head()
 
 
-# Relects it on a map
-Map(Layer(gdf_transports, popup_hover = [popup_element("name","Transports")]))
-
 # Finally, we concatenate our dataframes
 
 df_criterias = pd.concat([df_office,gdf_starbucks, gdf_vegan,gdf_stadiums,gdf_night_clubs,gdf_transports])
@@ -563,4 +560,124 @@ for i,row in df_criterias.iterrows():
     Marker(**name,icon = icon).add_to(map_final)
 
 # Final map  
+import pymongo
+from pymongo import MongoClient
+import folium
+from folium import Choropleth, Circle, Marker, Icon, Map
+from folium.plugins import HeatMap, MarkerCluster
+import pandas as pd
+from pandas import DataFrame
+from dotenv import load_dotenv
+import os
+import requests
+import json
+from functools import reduce
+import operator
+import geopandas as gpd
+import cartoframes
+from cartoframes.viz import Map, Layer, popup_element
+
+
+# We concatenate our dataframes
+
+df_criteria = pd.concat([df_office,gdf_starbucks, gdf_vegan,gdf_stadiums,gdf_night_clubs,gdf_transports])
+df_criteria.head()
+df_criteria = df_criteria
+
+# Application of .unique to obtain values on criteria column.
+
+df_criteria.criteria.unique()
+
+# Definition of the final map
+
+map_final = folium.Map (location = [40.7592189,-73.9783534],zoom_start = 15, min_lon = - 180, max_lon = 180, attr = 'Mapbox attribution')
+
+# Function to establish different markers to each criteria.
+
+for i,row in df_criterias.iterrows():
+    name = {"location" : [row["latitud"],row["longitud"]],
+            "tooltip" : row["name"]}
+    
+    if row["criteria"] == 'Starbucks':
+        icon = Icon(color = "darkpurple",
+                    prefix = "fa",
+                    icon = "coffee",
+                    icon_color = "beige")
+    elif row["criteria"] == 'transports':
+        icon = Icon(color = "blue",
+                    prefix = "fa",
+                    icon = "globe",
+                    icon_color = "beige")
+    elif row["criteria"] == 'office location':
+        icon = Icon(color = "red",
+                    prefix = "fa",
+                    icon = "building-o",
+                    icon_color = "beige")
+    elif row["criteria"] == 'basketball stadium':
+        icon = Icon(color = "orange",
+                    prefix = "fa",
+                    icon = "futbol-o",
+                    icon_color = "beige")
+    elif row["criteria"] == 'vegan':
+        icon = Icon(color = "green",
+                    prefix = "fa",
+                    icon = "cutlery",
+                    icon_color = "beige")
+    else:
+        icon = Icon(color = "white",
+                    prefix = "fa",
+                    icon = "glass",
+                    icon_color = "lightblue")
+        
+    Marker(**name,icon = icon).add_to(map_final)
+
+# Final map  
 map_final
+
+# Creating a heatmap
+
+map_final2 = folium.Map (location = [40.7592189,-73.9783534],zoom_start = 15)
+
+# Defining the office location marker
+
+icon = Icon(color = "white",
+            prefix = "fa",
+            icon = "building-o",
+            icon_color = "blue")
+loc = {"location":[office_lat,office_long],
+       "tooltip": "Office Location"}
+
+marker_office = Marker(**loc, icon = icono)
+marker_office.add_to(map_final2)
+
+# Defining the criteria yo be shown on the heatmap.
+
+criteria1 = df_criteria[df_criteria.criteria== "Starbucks"]
+criteria1_group = folium.FeatureGroup(name = "Starbucks")
+HeatMap(data = criteria1[["latitud","longitud"]],radius = 15).add_to(criteria1_group)
+criteria1_group.add_to(map_final2)
+
+criteria2 = df_criteria[df_criteria.criteria == "vegan"]
+criteria2_group = folium.FeatureGroup(name = "vegan")
+HeatMap(data = criteria2[["latitud","longitud"]],radius = 15).add_to(criteria2_group)
+criteria2_group.add_to(map_final2)
+
+criteria3 = df_criteria[df_criteria.criteria == "basketball stadium"]
+criteria3_group = folium.FeatureGroup(name = "basketball stadium")
+HeatMap(data = criteria3[["latitud","longitud"]],radius = 15).add_to(criteria3_group)
+criteria3_group.add_to(map_final2)
+
+criteria4 = df_criteria[df_criteria.criteria == "night_clubs"]
+criteria4_group = folium.FeatureGroup(name = "night_clubs")
+HeatMap(data = criteria4[["latitud","longitud"]],radius = 15).add_to(criteria4_group)
+criteria4_group.add_to(map_final2)
+
+criteria5 = df_criteria[df_criteria.criteria == "transports"]
+criteria5_group = folium.FeatureGroup(name = "transports")
+HeatMap(data = criteria5[["latitud","longitud"]],radius = 15).add_to(criteria5_group)
+criteria5_group.add_to(map_final2)
+
+folium.LayerControl(collapsed=False).add_to(map_final2)
+
+# Executing map_final2
+map_final2
