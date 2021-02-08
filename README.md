@@ -27,7 +27,7 @@ From the original given , the **selected criteria** to determine our location ar
 
 The selection began by using ***pymongo library***, so we filter the list of offices by name, city and coordinates of all office whose number of employees were 90.
 
-For other relevant information as the ubication of Starbucks locals, vegan restaurants or places to go party, was necessary to resort to the ![APIs in Foursquare](https://developer.foursquare.com/docs/build-with-foursquare/categories/)
+For other relevant information as the ubication of Starbucks locals, vegan restaurants or places to go party, was necessary to resort to the ![APIs in Foursquare](https://developer.foursquare.com/)
 
 Finally, all the relevant information has been reflected on maps. For this aim, it has been indispensable the use of ***folium, cartoframe*** or ***geopandas***.
 
