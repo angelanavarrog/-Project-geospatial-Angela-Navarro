@@ -20,7 +20,7 @@ from cartoframes.viz import Map, Layer, popup_element
 
 client = MongoClient()
 db = client.companies
-db
+print(db)
 
 # Execution of first query to run filters based on number of employees.
 
