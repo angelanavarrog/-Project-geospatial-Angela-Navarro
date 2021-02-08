@@ -8,12 +8,7 @@
 
 The goal of this project is to **propose an office location** where some given criteria are met and where the given company **size is 87 employees**.
 
-## Procedure
-
-
-
-## Procedure
-
+## Criteria selecction
 
 For this purpose, I have selected from a dataset that contains information about some companies' offices, the one that meets the following filters:
 
@@ -28,6 +23,8 @@ From the original given , the **selected criteria** to determine our location ar
 - At least one ***basketball stadium*** within 10 km of the office.
 - ***Place to go party*** located nearby.
 - Availability of ***shuttle services for travel***.
+
+## Procedure
 
 ## Conclusion
 
