@@ -13,7 +13,7 @@ For this purpose, I have selected from a dataset that contains information about
 
 - **Assumption of number of employees of 90:** Currently, a huge number of companies have implanted a work from home policy but, additionally the company expect to increase their employees number in the future, so being continously changing the location would be counterproductive.
 
-- **Selecttion of New York City** as the place to locate the office as it is the USA city with more ***Starbucks***.
+- **Selectton of New York City** as the place to locate the office as it is the USA city with more ***Starbucks***.
 
 From the original given , the **selected criteria** to determine our location are:
 
@@ -34,6 +34,8 @@ Finally, all the relevant information has been reflected on maps. For this aim, 
 
 ## Conclusion
 
-After selected an unique location in NYC, could we propose our location as the final ubication of the office? Would our selectd criteria be satisfied?
-
 ![office proposal location](https://github.com/angelanavarrog/Geospatial-Project-Angela-Navarro/blob/main/images/office%20location.jpg)
+
+Above is shown the location proposal.
+
+After selected an unique location in NYC, could we propose our location as the final ubication of the office? Would our selectd criteria be satisfied?
