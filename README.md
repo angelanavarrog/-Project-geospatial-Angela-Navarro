@@ -5,7 +5,7 @@
 
 ## Ojective
 
-The goal of this project is to **propose an office location** where some ![given criteria](https://github.com/antoniogarciagiron/W4-geospatial-data-project) are met and where the given company **size is 87 employees**.
+The goal of this project is to **propose an office location** where some [given criteria](https://github.com/antoniogarciagiron/W4-geospatial-data-project) are met and where the given company **size is 87 employees**.
 
 ## Criteria selecction
 
