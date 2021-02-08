@@ -1,7 +1,6 @@
-![portada](https://github.com/angelanavarrog/-Project-geospatial-Angela-Navarro/blob/main/images/office.jpg)
-
 # Project Geospatial
 
+![portada](https://github.com/angelanavarrog/-Project-geospatial-Angela-Navarro/blob/main/images/office.jpg)
 
 
 ## Ojective
@@ -18,13 +17,20 @@ For this purpose, I have selected from a dataset that contains information about
 
 From the original given , the **selected criteria** to determine our location are:
 
-- Proximity to ***Starbucks establishments*** near the office. 
-- Availability of ***Vegan restaurants*** .
-- At least one ***basketball stadium*** within 10 km of the office.
-- ***Place to go party*** located nearby.
-- Availability of ***shuttle services for travel***.
+- Proximity to ***Starbucks establishments*** near the office. A 11.5% of the employees satisfies with it.
+- Availability of ***Vegan restaurants*** . The CEO of the company is satisfied with this election.
+- At least one ***basketball stadium*** within 10 km of the office. The maintenance guy is pleased with it.
+- ***Place to go party*** located nearby. The 100% of the company's empoyees  appreciates the election.
+- Availability of ***shuttle services for travel***. The KAM team members (23% of the company employees) are satisfied for beeing consired on the election.
 
 ## Procedure
+
+The selection began by using ***pymongo library***, so we filter the list of offices by name, city and coordinates of all office whose number of employees were 90.
+
+For other relevant information as the ubication of Starbucks locals, vegan restaurants or places to go party, was necessary to resort to the ![APIs in Foursquare][https://developer.foursquare.com/docs/build-with-foursquare/categories/]
+
+Finally, all the relevant information has been reflected on maps. For this aim, it has been indispensable the use of ***folium, cartoframe*** or ***geopandas***.
+
 
 ## Conclusion
 
