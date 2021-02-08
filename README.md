@@ -34,4 +34,4 @@ Finally, all the relevant information has been reflected on maps. For this aim, 
 
 ## Conclusion
 
-After selected an unique location in NYC, could we propose our location as the final ubication of the office?
+After selected an unique location in NYC, could we propose our location as the final ubication of the office? Would our selectd criteria be satisfied?
