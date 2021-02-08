@@ -5,7 +5,7 @@
 
 ## Ojective
 
-The goal of this project is to **propose an office location** where some given criteria are met and where the given company **size is 87 employees**.
+The goal of this project is to **propose an office location** where some ![given criteria](https://github.com/antoniogarciagiron/W4-geospatial-data-project) are met and where the given company **size is 87 employees**.
 
 ## Criteria selecction
 
@@ -27,10 +27,9 @@ From the original given , the **selected criteria** to determine our location ar
 
 The selection began by using ***pymongo library***, so we filter the list of offices by name, city and coordinates of all office whose number of employees were 90.
 
-For other relevant information as the ubication of Starbucks locals, vegan restaurants or places to go party, was necessary to resort to the [APIs in Foursquare](https://developer.foursquare.com/)
+For other relevant information as the ubication of Starbucks locals, vegan restaurants or places to go party, was necessary to use [APIs in Foursquare](https://developer.foursquare.com/)
 
-Finally, all the relevant information has been reflected on maps. For this aim, it has been indispensable the use of ***folium, cartoframe*** or ***geopandas***.
-
+Finally, all the relevant information has been reflected on maps. For this aim, it has been indispensable the use somo Python libraries as folium, cartoframe, geopandas, resqeuests, pandas or goopandas.
 
 ## Conclusion
 
