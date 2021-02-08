@@ -19,15 +19,14 @@ from cartoframes.viz import Map, Layer, popup_element
 client = MongoClient()
 db = client.companies
 
-def offices_options(filt1, projects1,results1):
+def offices_options(filt1, projects1):
     ''' It takes the company information filtered by our defined criteria.
     It returns a Dataframe with company name and the office location (city, lat, long)'''
 
     filt1 = {"number_of_employees": {"$eq":90},"offices.city": {'$eq': "New York"}}
     project1 = {"_id":0,"name":1,"offices.city": 1,"number_of_employees": 1,"offices.latitude":1,"offices.longitude":1}
     results1 = db.offices.find(filt1,project1).sort("number_of_employees",1)
-    office_location = list(results1)
-    return office_location
+    return results1
 
 
 def office_coordinates (office_data):
