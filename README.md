@@ -28,3 +28,7 @@ From the original given , the **selected criteria** to determine our location ar
 - At least one ***basketball stadium*** within 10 km of the office.
 - ***Place to go party*** located nearby.
 - Availability of ***shuttle services for travel***.
+
+## Conclusion
+
+After selected an unique location in NYC, could we propose our location as the final ubication of the office?
